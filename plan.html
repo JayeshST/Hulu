@@ -1,0 +1,139 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hulu /Plan</title>
+		   <link href="images/logo.png" rel="icon">
+		   <link rel="stylesheet" type="text/css" href="plan.css">
+		   	   <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div>
+<header class="header">
+	
+      <nav> <a href="index.html"><img src="images/logo3.png" id="logo3"></a>
+        <ul>
+          <li>
+            <button class="login-btn">Log In</button>
+          </li>
+        </ul>
+      </nav>
+<div class="modal">
+      <div class="modal-box">
+        <div class="modal-body">
+          <h3>Log In</h3>
+          
+
+
+          <form>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="form-control">
+              <label for="password">Password</label>
+              <input type="password" id="password" required />
+            </div>
+            <p><a href="#">Forgot your email or password</a></p>
+            <button class="btn btn-dark">Log In</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p>Don't have an account? <a href="#">Start your free trial</a></p>
+        </div>
+
+        <img src="images/cut.png" 
+          class="close"
+          />
+      </div>
+    </div>
+
+  <div class="container">
+    <div class="top">
+      <h1>Choose Your Plan</h1>
+      <p style="color:grey;">Switch plans or cancel anytime.</p>
+      <div class="toggle-btn">
+        <span style="margin: 0.8em;">BASE PLANS</span>
+        <label class="switch">
+          <input type="checkbox" id="checbox" onclick="check()" ; />
+          <span class="slider round"></span>
+        </label>
+        <span style="margin: 0.8em;">BUNDLE / SAVE</span></div>
+    </div>
+
+    <div class="package-container">
+      <div class="packages">
+        <h1>Hulu (No Ads)</h1>
+        <img src="images/a11.png">
+        <h5 style="color:limegreen;">Get First Month Free, Then</h5>
+        <h2 class="text1">&dollar;19.99</h2>
+        <h2 class="text2">&dollar;14.99</h2>
+       <p> Our Hulu (No Ads) plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more with no ad interruptions.</p><br>
+        <a href="#" class="button button1">Start Now</a>
+      </div>
+      <div class="packages">
+      	
+        <h1>Hulu</h1> <img src="images/a11.png">
+        <h5 style="color:limegreen;">Get First Month Free, Then</h5>
+        <h2 class="text1">&dollar;13.99</h2>
+        <h2 class="text2">&dollar;7.99</h2>
+         <p> Our Hulu (With Ads) plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more.</p><br><br>
+        <a href="#" class="button button2">Start Now</a>
+      </div>
+      <div class="packages">
+        <h1>Hulu + Live TV</h1>
+         <img src="images/a11.png">
+        <h5 style="color:limegreen;">Includes Disney+ and ESPN+</h5>
+        <h2 class="text1">&dollar;75.99</h2>
+        <h2 class="text2">&dollar;69.99</h2>
+         <p> Access 75+ channels with Live TV, Unlimited DVR, endless entertainment with Disney+ (No Ads), live sports with ESPN+ (With Ads), and award-winning Hulu originals with Hulu (With Ads).</p>
+        <a href="#" class="button button3">Start Now</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+
+<script >
+	function check() {
+  var checkBox = document.getElementById("checbox");
+  var text1 = document.getElementsByClassName("text1");
+  var text2 = document.getElementsByClassName("text2");
+
+  for (var i = 0; i < text1.length; i++) {
+    if (checkBox.checked == true) {
+      text1[i].style.display = "block";
+      text2[i].style.display = "none";
+    } else if (checkBox.checked == false) {
+      text1[i].style.display = "none";
+      text2[i].style.display = "block";
+    }
+  }
+}
+check();
+
+</script>
+
+<script >
+const modal = document.querySelector(".modal");
+const loginButton = document.querySelector(".login-btn");
+const closeButton = document.querySelector(".close");
+
+const openModal = () => (modal.style.display = "block");
+const closeModal = () => (modal.style.display = "none");
+const outsideClick = (e) => {
+  if (e.target == modal) {
+    closeModal();
+  }
+};
+loginButton.addEventListener("click", openModal);
+closeButton.addEventListener("click", closeModal);
+window.addEventListener("click", outsideClick);
+
+</script>
+
+
+
